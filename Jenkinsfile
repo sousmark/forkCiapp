@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'java -jar target/my-app.jar'
+                sh 'java -jar target/ciapp-0.0.1-SNAPSHOT.jar'
             }
         }
     }
