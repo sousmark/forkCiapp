@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './mvnw compile'
+                sh 'mvn compile'
             }       
         }
         stage('Test') {
             steps {
-                sh './mvnw test'
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
             steps {
-                sh './mvnw clean package'
+                sh 'mvn clean package'
                 sh 'java -jar target/ciapp-0.0.1-SNAPSHOT.jar'
             }
         }
