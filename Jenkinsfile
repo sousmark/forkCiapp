@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn compile'
             }       
         }
         stage('Test') {
@@ -12,6 +12,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            steps {
+                sh 'mvn clean package'
+            }
             steps {
                 sh 'java -jar target/ciapp-0.0.1-SNAPSHOT.jar'
             }
