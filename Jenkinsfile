@@ -14,8 +14,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'mvn clean package'
-            }
-            steps {
                 sh 'java -jar target/ciapp-0.0.1-SNAPSHOT.jar'
             }
         }
