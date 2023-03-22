@@ -3,17 +3,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn compile'
+		echo 'Compiling...'
+                sh 'sudo mvn compile'
             }       
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+		echo 'Testing...'
+                sh 'sudo mvn test'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'mvn clean package'
+		echo 'Deploying...'
+                sh 'sudo mvn clean package'
             }
         }
     }
